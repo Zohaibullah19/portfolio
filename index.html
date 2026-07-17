@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zohaib Ullah · Arch Intern Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #121212;
+      color: #f0f4f8;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #5a9cff;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #8ab8ff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(18, 18, 18, 0.92);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+      z-index: 1000;
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      color: #f0f4f8;
+    }
+
+    .logo span {
+      color: #5a9cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      font-size: 0.95rem;
+      font-weight: 400;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #d0d9e6;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 4px;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+      border-bottom-color: #5a9cff;
+    }
+
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid #2a2a2a;
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 60px;
+      height: 4px;
+      background: #5a9cff;
+      border-radius: 4px;
+    }
+
+    #intro {
+      padding-top: 8rem;
+      padding-bottom: 3rem;
+      background: linear-gradient(145deg, #141414 0%, #1a1a1a 100%);
+    }
+
+    .intro-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .intro-text {
+      flex: 2;
+      min-width: 280px;
+    }
+
+    .intro-text h1 {
+      font-size: 3rem;
+      font-weight: 300;
+    }
+
+    .intro-text h1 strong {
+      font-weight: 600;
+      color: #5a9cff;
+    }
+
+    .intro-text p {
+      max-width: 700px;
+      font-size: 1.2rem;
+      color: #c8d0dc;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .profile-photo {
+      flex: 1;
+      min-width: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-photo .avatar {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #5a9cff;
+      box-shadow: 0 0 40px rgba(90, 156, 255, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      background: #2a2a2a;
+      display: block;
+    }
+
+    .profile-photo .avatar:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 60px rgba(90, 156, 255, 0.5);
+    }
+
+    .profile-photo .avatar-placeholder {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a2a3a, #2a3a5a);
+      border: 4px solid #5a9cff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      color: #5a9cff;
+      box-shadow: 0 0 40px rgba(90, 156, 255, 0.2);
+    }
+
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+
+    .dual-grid .card {
+      background: #1c1c1c;
+      padding: 1.8rem;
+      border-radius: 18px;
+      border-left: 4px solid #5a9cff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    .dual-grid h3 {
+      font-size: 1.6rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: #dce4f0;
+    }
+
+    .dual-grid ul {
+      list-style: none;
+    }
+    .dual-grid li {
+      margin-bottom: 0.6rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .dual-grid li:before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #5a9cff;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .skill-badge {
+      background: #252525;
+      padding: 0.9rem 0.5rem;
+      text-align: center;
+      border-radius: 40px;
+      font-weight: 400;
+      border: 1px solid #333;
+      transition: 0.2s;
+      color: #d0d9e6;
+    }
+
+    .skill-badge i {
+      margin-right: 8px;
+      color: #5a9cff;
+    }
+
+    .skill-badge:hover {
+      border-color: #5a9cff;
+      background: #1f2a36;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: #1b1b1b;
+      padding: 1.5rem 2rem;
+      border-radius: 20px;
+      border-left: 6px solid #5a9cff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .timeline-item h3 {
+      font-size: 1.3rem;
+      color: #e8edf5;
+    }
+
+    .timeline-item .meta {
+      color: #8a9bb0;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-card {
+      background: #1a1a1a;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(0, 80, 255, 0.15);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #1a2a3a, #0d1b2a);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid #2a2a2a;
+    }
+
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+
+    .card-img .img-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a2a3a, #0d1b2a);
+      color: #5a9cff;
+      font-size: 3rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .card-img .img-fallback span {
+      font-size: 0.8rem;
+      color: #8a9bb0;
+      font-weight: 300;
+    }
+
+    .card-img .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 20, 40, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: white;
+      font-size: 2.5rem;
+      backdrop-filter: brightness(0.7);
+    }
+
+    .project-card:hover .card-img .overlay {
+      opacity: 1;
+    }
+
+    .project-card:hover .card-img img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 1.5rem 1.5rem 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-body h3 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #edf2fa;
+    }
+
+    .card-body .subtitle {
+      color: #8aa3c9;
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3px;
+    }
+
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.5rem 0 0.8rem;
+    }
+
+    .tech-badge {
+      background: #2c3a4a;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #b6cbe5;
+      text-transform: uppercase;
+      border: 1px solid #3a4a5e;
+    }
+
+    .card-body ul {
+      list-style: none;
+      margin: 0.5rem 0 1.2rem;
+      font-size: 0.9rem;
+      color: #c4d0de;
+    }
+
+    .card-body ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .card-body ul li:before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #5a9cff;
+      font-weight: 700;
+    }
+
+    .btn-github {
+      background: transparent;
+      border: 1.5px solid #5a9cff;
+      color: #f0f4f8;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: 0.25s;
+      align-self: flex-start;
+      margin-top: auto;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .btn-github i {
+      font-size: 1.1rem;
+    }
+
+    .btn-github:hover {
+      background: #5a9cff;
+      color: #121212;
+      border-color: #5a9cff;
+      box-shadow: 0 0 16px #3f7ed0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.8rem;
+    }
+
+    .testimonial-card {
+      background: #1b1b1b;
+      padding: 1.8rem;
+      border-radius: 20px;
+      border: 1px solid #2c2c2c;
+      font-style: italic;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .testimonial-card .author {
+      font-style: normal;
+      font-weight: 500;
+      margin-top: 1rem;
+      color: #5a9cff;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-item {
+      background: #1b1b1b;
+      padding: 1.4rem;
+      border-radius: 16px;
+      border-bottom: 3px solid #5a9cff;
+      transition: 0.2s;
+    }
+
+    .blog-item:hover {
+      background: #252525;
+    }
+
+    .blog-item h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .blog-item small {
+      color: #8899b0;
+    }
+
+    .achievements-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .achievement-chip {
+      background: #1f2a36;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      border: 1px solid #3a4a5e;
+      font-weight: 400;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .achievement-chip i {
+      color: #ffcc4d;
+    }
+
+    #contact {
+      background: #0f0f0f;
+      border-radius: 40px 40px 0 0;
+      margin-top: 1rem;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      margin-bottom: 1.2rem;
+      background: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 40px;
+      color: #f0f4f8;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .contact-form input:focus, .contact-form textarea:focus {
+      border-color: #5a9cff;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(90, 156, 255, 0.2);
+    }
+
+    .contact-form textarea {
+      border-radius: 24px;
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background: #5a9cff;
+      border: none;
+      padding: 0.8rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #121212;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .contact-form button:hover {
+      background: #7bb0ff;
+      box-shadow: 0 0 20px #3f7ed0;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-info .linkedin-btn {
+      background: #0a66c2;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      color: white;
+      font-weight: 500;
+      width: fit-content;
+      margin-top: 1rem;
+      border: 1px solid #2f7fd0;
+      transition: 0.2s;
+    }
+
+    .contact-info .linkedin-btn:hover {
+      background: #1a77d4;
+      box-shadow: 0 0 20px #1a6ec9;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #282828;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      color: #7a8a9e;
+      font-size: 0.9rem;
+    }
+
+    /* Profile photo hover effect - add GitHub link */
+    .github-profile-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      padding: 0.4rem 1.2rem;
+      background: #1f2a36;
+      border-radius: 40px;
+      border: 1px solid #3a4a5e;
+      transition: 0.2s;
+      font-size: 0.85rem;
+    }
+
+    .github-profile-link:hover {
+      background: #2c3a4a;
+      border-color: #5a9cff;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.8rem 1.2rem;
+      }
+      .nav-links {
+        gap: 1rem;
+        justify-content: center;
+      }
+      .intro-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .intro-text h1 {
+        font-size: 2.2rem;
+      }
+      .intro-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .profile-photo .avatar,
+      .profile-photo .avatar-placeholder {
+        width: 150px;
+        height: 150px;
+      }
+      .dual-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .profile-photo .avatar,
+      .profile-photo .avatar-placeholder {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Arch<span>Intern</span></div>
+    <div class="nav-links">
+      <a href="#intro">Intro</a>
+      <a href="#background">Background</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#blog">Blog</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- INTRO -->
+    <section id="intro">
+      <div class="intro-wrapper">
+        <div class="intro-text">
+          <h1>Hello, I'm <a href="https://www.linkedin.com/in/zohaib-ullah-224841413?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" style="color: #5a9cff; text-decoration: none;"><strong>Zohaib Ullah</strong></a></h1>
+          <p>
+            Aspiring full-stack & app developer — currently interning at 
+            <strong style="color:#5a9cff;">Arch Technologies</strong>. 
+            I build digital products that merge design with performance, 
+            and I'm passionate about clean code, scalable architecture, 
+            and human-centered interfaces.
+          </p>
+          <a href="https://github.com/Zohaibullah19" target="_blank" class="github-profile-link">
+            <i class="fab fa-github"></i> github.com/Zohaibullah19
+          </a>
+        </div>
+        <div class="profile-photo">
+          <img src="images/profile.jpg" alt="Zohaib Ullah - Professional Profile" class="avatar" />
+          <div class="avatar-placeholder">
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BACKGROUND -->
+    <section id="background">
+      <h2>Background</h2>
+      <div class="dual-grid">
+        <div class="card">
+          <h3><i class="fas fa-graduation-cap" style="color:#5a9cff; margin-right:10px;"></i>Education</h3>
+          <ul>
+            <li><strong>B.S. Software Engineering</strong> — City University Peshawar (2022–2026)</li>
+            <li>Specialization in Web & App Development</li>
+            <li>Relevant coursework: Full-Stack Web, Mobile Development, Cloud Computing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><i class="fas fa-certificate" style="color:#5a9cff; margin-right:10px;"></i>Certifications</h3>
+          <ul>
+            <li>AWS Certified Developer – Associate (2025)</li>
+            <li>Meta Front-End Developer Certificate</li>
+            <li>Google UX Design Certificate (2024)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+        <span class="skill-badge"><i class="fab fa-django"></i> Django</span>
+        <span class="skill-badge"><i class="fab fa-flutter"></i> Flutter</span>
+        <span class="skill-badge"><i class="fab fa-react"></i> React</span>
+        <span class="skill-badge"><i class="fas fa-database"></i> Firebase</span>
+        <span class="skill-badge"><i class="fas fa-cloud"></i> AWS</span>
+        <span class="skill-badge"><i class="fas fa-code"></i> TypeScript</span>
+        <span class="skill-badge"><i class="fas fa-mobile-alt"></i> App Dev</span>
+        <span class="skill-badge"><i class="fas fa-palette"></i> Figma</span>
+        <span class="skill-badge"><i class="fas fa-server"></i> REST APIs</span>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Arch Technologies · Web Development Intern</h3>
+          <div class="meta">Jan 2026 – Present</div>
+          <p>Building internal tooling and contributing to the design system. Collaborating with product teams to ship accessible, high-performance features.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Optimus Automate · App Developer Intern</h3>
+          <div class="meta">Aug 2025 – Dec 2025</div>
+          <p>Developed cross-platform mobile features for fitness and language apps. Optimized performance and implemented real-time sync with Firebase.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>CodeAlfa · Full-Stack Developer Intern</h3>
+          <div class="meta">May 2025 – Jul 2025</div>
+          <p>Worked on e‑commerce and social media platforms. Built Django REST APIs, integrated payment gateways, and designed responsive UI.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+
+        <!-- 1. ShopHub - Ecommerce -->
+        <div class="project-card">
+          <div class="card-img">
+            <img src="images/shophub.jpg" alt="ShopHub" />
+            <div class="img-fallback">
+              <i class="fas fa-shopping-cart"></i>
+              <span>ShopHub</span>
+            </div>
+            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>ShopHub</h3>
+            <div class="subtitle">CodeAlfa · Full-Stack</div>
+            <div class="tech-badges">
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">SQLite</span>
+            </div>
+            <ul>
+              <li>Role: Full-stack developer</li>
+              <li>Built scalable e‑commerce with cart & checkout</li>
+              <li>Product reviews, order history, admin dashboard</li>
+            </ul>
+            <a href="https://github.com/Zohaibullah19/CodeAlfa-Task1-EcommerceStore" target="_blank" class="btn-github">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. SocialSphere -->
+        <div class="project-card">
+          <div class="card-img">
+            <img src="images/socialsphere.jpg" alt="SocialSphere" />
+            <div class="img-fallback">
+              <i class="fas fa-users"></i>
+              <span>SocialSphere</span>
+            </div>
+            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>SocialSphere</h3>
+            <div class="subtitle">CodeAlfa · Full-Stack</div>
+            <div class="tech-badges">
+              <span class="tech-badge">Django</span>
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <ul>
+              <li>Role: Backend & API design</li>
+              <li>Real‑time messaging & feed algorithm</li>
+              <li>Like, comment, follow, notifications system</li>
+            </ul>
+            <a href="https://github.com/Zohaibullah19/CodeAlfa-Task2-SocialSphere" target="_blank" class="btn-github">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. LinguaMaster -->
+        <div class="project-card">
+          <div class="card-img">
+            <img src="images/linguamaster.jpg" alt="LinguaMaster" />
+            <div class="img-fallback">
+              <i class="fas fa-language"></i>
+              <span>LinguaMaster</span>
+            </div>
+            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>LinguaMaster</h3>
+            <div class="subtitle">Optimus Automate · App Dev</div>
+            <div class="tech-badges">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Firebase</span>
+              <span class="tech-badge">Dart</span>
+            </div>
+            <ul>
+              <li>Role: Lead mobile developer</li>
+              <li>Gamified language learning with daily challenges</li>
+              <li>Text-to-speech, flashcards, quizzes, achievements</li>
+            </ul>
+            <a href="https://github.com/Zohaibullah19/OptimusAutomate-Task2-LinguaMaster" target="_blank" class="btn-github">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- 4. FitTrack Pro -->
+        <div class="project-card">
+          <div class="card-img">
+            <img src="images/fittrackpro.jpg" alt="FitTrack Pro" />
+            <div class="img-fallback">
+              <i class="fas fa-heartbeat"></i>
+              <span>FitTrack Pro</span>
+            </div>
+            <div class="overlay"><i class="fas fa-search-plus"></i></div>
+          </div>
+          <div class="card-body">
+            <h3>FitTrack Pro</h3>
+            <div class="subtitle">Optimus Automate · App Dev</div>
+            <div class="tech-badges">
+              <span class="tech-badge">Flutter</span>
+              <span class="tech-badge">Firebase</span>
+              <span class="tech-badge">Dart</span>
+            </div>
+            <ul>
+              <li>Role: Android developer</li>
+              <li>Workout tracking, progress analytics & offline mode</li>
+              <li>BMI calculator, goals tracking, theme support</li>
+            </ul>
+            <a href="https://github.com/Zohaibullah19/OptimusAutomate_Task1_FitTrackPro" target="_blank" class="btn-github">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          “Zohaib's work on ShopHub was exceptional. Fast, clean, and always ahead of schedule.”
+          <div class="author">— CTO, CodeAlfa</div>
+        </div>
+        <div class="testimonial-card">
+          “Brought fresh ideas and technical rigor to our mobile team. LinguaMaster's UX improved drastically.”
+          <div class="author">— Product Lead, Optimus</div>
+        </div>
+        <div class="testimonial-card">
+          “One of the most dedicated interns I've mentored. Always curious, always shipping quality code.”
+          <div class="author">— Senior Eng, Arch Tech</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <h2>Blog & Articles</h2>
+      <div class="blog-grid">
+        <div class="blog-item">
+          <h4><a href="#">CSS Grid vs. Flexbox</a></h4>
+          <small>March 2026 · 4 min read</small>
+        </div>
+        <div class="blog-item">
+          <h4><a href="#">Authentication patterns in React</a></h4>
+          <small>Feb 2026 · 6 min read</small>
+        </div>
+        <div class="blog-item">
+          <h4><a href="#">Designing for developers</a></h4>
+          <small>Jan 2026 · 3 min read</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <div class="achievements-list">
+        <span class="achievement-chip"><i class="fas fa-trophy"></i> Hackathon Winner 2025</span>
+        <span class="achievement-chip"><i class="fas fa-award"></i> Outstanding Intern (CodeAlfa)</span>
+        <span class="achievement-chip"><i class="fas fa-medal"></i> Google Cloud Innovator</span>
+        <span class="achievement-chip"><i class="fas fa-star"></i> Arch Tech Spotlight Award</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Let's Connect</h2>
+      <div class="contact-wrapper">
+        <div class="contact-form">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Email" />
+          <textarea placeholder="Message"></textarea>
+          <button>Send <i class="fas fa-paper-plane" style="margin-left:8px;"></i></button>
+        </div>
+        <div class="contact-info">
+          <p style="font-size:1.1rem; color:#c0ccdd;"><i class="fas fa-map-pin" style="color:#5a9cff;"></i> Remote · available for collaborations</p>
+          <a href="https://github.com/Zohaibullah19" target="_blank" class="linkedin-btn" style="background:#24292e; border-color:#3a4a5e;">
+            <i class="fab fa-github"></i> GitHub Profile
+          </a>
+          <a href="https://www.linkedin.com/in/zohaib-ullah-224841413?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="linkedin-btn"><i class="fab fa-linkedin-in"></i> LinkedIn Profile</a>
+          <p style="margin-top:1.5rem; color:#7a8a9e;">Or reach out via the form — I'll respond within 24h.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 Zohaib Ullah · crafted with <i class="fas fa-heart" style="color:#5a9cff;"></i>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          const targetId = this.getAttribute('href');
+          if (targetId && targetId.startsWith('#')) {
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+              e.preventDefault();
+              targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
+        });
+      });
+
+      // Hide fallback when image loads
+      document.querySelectorAll('.card-img img').forEach(img => {
+        img.addEventListener('load', function() {
+          const fallback = this.nextElementSibling;
+          if (fallback && fallback.classList.contains('img-fallback')) {
+            fallback.style.display = 'none';
+          }
+        });
+        img.addEventListener('error', function() {
+          const fallback = this.nextElementSibling;
+          if (fallback && fallback.classList.contains('img-fallback')) {
+            fallback.style.display = 'flex';
+          }
+        });
+      });
+
+      const profileImg = document.querySelector('.profile-photo .avatar');
+      const profileFallback = document.querySelector('.profile-photo .avatar-placeholder');
+      if (profileImg) {
+        profileImg.addEventListener('load', function() {
+          if (profileFallback) profileFallback.style.display = 'none';
+        });
+        profileImg.addEventListener('error', function() {
+          if (profileFallback) {
+            profileFallback.style.display = 'flex';
+            this.style.display = 'none';
+          }
+        });
+      }
+
+      console.log('🚀 Zohaib Ullah · Portfolio ready');
+    })();
+  </script>
+</body>
+</html>
